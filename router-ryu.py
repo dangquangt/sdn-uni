@@ -794,8 +794,7 @@ class VlanRouter(object):
         firewall_data = {}
         ### DEBUGGING
         for key, value in self.rule_data.items():
-            print("Cong chua bong bong ", self.rule_data, key, value)
-            print("Cong chua bong bong value is ", value.__dict__)
+
 
             data = {'Rule id': key,
                     'Rule details: ': value.get()}
@@ -2133,9 +2132,7 @@ class OfCtl_after_v1_2(OfCtl):
         if outport is not None:
             actions.append(ofp_parser.OFPActionOutput(outport, 0))
 
-        if (nw_dst == '10.0.0.192'):
-            print("#############################NOTICE please############################", actions, nw_dst, nw_src,
-                  src_mask)
+
         self.set_flow(cookie, priority, dl_type=dl_type, dl_vlan=dl_vlan,
                       nw_src=nw_src, src_mask=src_mask,
                       nw_dst=nw_dst, dst_mask=dst_mask,
